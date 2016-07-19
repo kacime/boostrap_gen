@@ -132,12 +132,14 @@
 
  	});
 
+	function downloadDiv() {
+
+   
+
 
 
 	$('#downloadButton').click(function(){
 
-		var email = "test";
-		var contenu_mail = "slip mou";
 		var elementHtml = document.getElementById("droppable").innerHTML;
 		$.post("copy.php",
         {
@@ -146,6 +148,8 @@
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
         });
+
+
 	});
 	
 
