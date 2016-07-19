@@ -10,7 +10,7 @@
 
   <style>
   .draggable {  z-index: 1; }
-  #droppable { height: 1000px; border: 1px solid black; background-color: yellow; z-index: 0;}
+  #droppable { height: auto; min-height: 500px; border: 1px solid black; background-color: yellow; z-index: 0;}
   .miniature p {font-size: 0.8em;}
   .miniature h1 {font-size: 2em;}
   .container { width: 95%; }
@@ -22,7 +22,6 @@
 
 
 	<div class="container">
-	<a href="#downloadButton">Test</a>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="container">
@@ -80,7 +79,12 @@
 
 
 					</div>
-					<span id="resultat"></span>
+					<form>
+						<a href="#">
+						<input type="submit" id="downloadButton" name="ok" value="Générer le projet" />
+					</form>
+					<a href='download.php'>Télécharger le projet</a>
+
 				</div>
 			</div>
 
@@ -91,10 +95,9 @@
 </div>
 
 
-<form>
-<a href="">
-<input type="submit" id="downloadButton" name="ok" value="OK" />
-</form>
+
+
+
 
 
 
@@ -132,13 +135,10 @@
 
  	});
 
-	function downloadDiv() {
-
-   
-
 
 
 	$('#downloadButton').click(function(){
+
 
 		var elementHtml = document.getElementById("droppable").innerHTML;
 		$.post("copy.php",
@@ -146,9 +146,10 @@
           page: elementHtml,
         },
         function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+        	alert("Data: " + data + "\nStatus: " + status);
         });
-
+        // Permet de ne pas reload la page
+        //return false;
 
 	});
 	

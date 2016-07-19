@@ -54,7 +54,7 @@ fclose($fp);
 }
 
 // on fait appel à zip.php pour générer le fichier zip
-require_once('zip.php');
+include('zip.php');
 
 
 ?>

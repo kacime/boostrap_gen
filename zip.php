@@ -1,5 +1,5 @@
 <?php
-
+echo "Somme : ", 1 + 2;
 // Création de l'objet ZIP
 $zip = new ZipArchive();
 
@@ -25,12 +25,7 @@ if($zip->open('Zip.zip', ZipArchive::CREATE) === true)
       // on ferme le zip
       $zip->close();
 
-      // On peut ensuite, comme dans le tuto de DHKold, proposer le téléchargement.
-      header('Content-Transfer-Encoding: binary'); //Transfert en binaire (fichier).
-      header('Content-Disposition: attachment; filename="Zip.zip"'); //Nom du fichier.
-      header('Content-Length: '.filesize('Zip.zip')); //Taille du fichier.
-    
-      readfile('Zip.zip');
+     include('download.php');
 
     }
     else
