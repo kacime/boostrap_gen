@@ -75,8 +75,9 @@
 			</div>
 			<div class="col-md-8">
 				<div class="container">
+					<p>Drop here</p>
 					<div id="droppable">
-						<p>Drop here</p>
+
 
 					</div>
 					<span id="resultat"></span>
@@ -153,7 +154,7 @@
 		var elementHtml = document.getElementById("droppable").innerHTML;
 		$.post("copy.php",
         {
-          name: elementHtml,
+          page: elementHtml,
         },
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
