@@ -25,7 +25,7 @@ if($zip->open('Zip.zip', ZipArchive::CREATE) === true)
       // on ferme le zip
       $zip->close();
 
-     include('download.php');
+
 
     }
     else

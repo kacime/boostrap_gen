@@ -96,7 +96,10 @@
 
 
 
-
+<?php 
+if (file_exists('Zip.zip')) {
+    unlink('Zip.zip');
+} ?>
 
 
 
@@ -135,6 +138,25 @@
 
  	});
 
+	function downloadDiv() {
+	while (!UrlExists('http://localhost:8888/Zip.zip')) {
+    
+	}
+   
+    var link = document.createElement('a');
+
+    link.setAttribute('download', 'test.zip');
+    link.setAttribute('href', 'Zip.zip');
+    link.click(); 
+
+	}
+
+	function UrlExists(url) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+	}
 
 
 	$('#downloadButton').click(function(){
@@ -150,7 +172,7 @@
         });
         // Permet de ne pas reload la page
         //return false;
-
+        downloadDiv();
 	});
 	
 
