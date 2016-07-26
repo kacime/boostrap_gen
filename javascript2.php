@@ -83,7 +83,6 @@
 						<a href="#">
 						<input type="submit" id="downloadButton" name="ok" value="Générer le projet" />
 					</form>
-					<a href='download.php'>Télécharger le projet</a>
 
 				</div>
 			</div>
@@ -131,14 +130,14 @@ if (file_exists('Zip.zip')) {
 	    $( "#droppable" ).droppable({
 	      drop: function( event, ui ) {
 	      	var draggableText = ui.draggable.html();
-	        $( this ).html( $( this ).html() + draggableText );
+	        $( this ).html( $( this ).html() + draggableText);
 	      }
 	    });
 
 
  	});
 
-	function downloadDiv() {
+	function downloadZip() {
 	while (!UrlExists('http://localhost:8888/Zip.zip')) {
     
 	}
@@ -172,7 +171,7 @@ if (file_exists('Zip.zip')) {
         });
         // Permet de ne pas reload la page
         //return false;
-        downloadDiv();
+        downloadZip();
 	});
 	
 
