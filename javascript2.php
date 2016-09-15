@@ -10,7 +10,8 @@
 
         <style>
             .draggable {  z-index: 1; }
-            #droppable { height: auto; min-height: 500px; border: 1px solid black; background-color: yellow; z-index: 0;}
+            #droppable { height: auto; min-height: 500px; z-index: 0;}
+            #final .container {border: 1px solid black;}
             .miniature p {font-size: 0.8em;}
             .miniature h1 {font-size: 2em;}
             .container { width: 95%; }
@@ -24,6 +25,92 @@
                 <div class="col-md-4">
                     <div class="container">
                         <div class="row">
+
+
+                             <div class=" draggable miniature">
+                                
+                            </div>
+
+
+                             <div class=" draggable miniature">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1 class="page-header">Page Heading
+                                            <small>Secondary Text</small>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" draggable miniature">
+                                <div class="row">
+                                    <div class="col-md-4 portfolio-item">
+                                        <a href="#">
+                                            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                                        </a>
+                                        <h3>
+                                            <a href="#">Project Name</a>
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                    </div>
+                                    <div class="col-md-4 portfolio-item">
+                                        <a href="#">
+                                            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                                        </a>
+                                        <h3>
+                                            <a href="#">Project Name</a>
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                    </div>
+                                    <div class="col-md-4 portfolio-item">
+                                        <a href="#">
+                                            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                                        </a>
+                                        <h3>
+                                            <a href="#">Project Name</a>
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                             <div class=" draggable miniature">
+                                  <div class="row text-center">
+                                    <div class="col-lg-12">
+                                        <ul class="pagination">
+                                            <li>
+                                                <a href="#">&laquo;</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#">1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">&raquo;</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" draggable miniature">
+
+                                  <hr>
+                            </div>
+
                             <div class=" draggable miniature">
                                 <div class="jumbotron row" id="accueil">
                                     <h1 class="text-center">Bienvenue dans notre espace</h1>
@@ -64,13 +151,11 @@
                             </div>
 
 
-                            <div class="draggable">
-                                <p>Troisieme drag</p>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div id="final" class="col-md-8">
                     <div class="container">
                         <p>Drop here</p>
                         <div id="droppable">
