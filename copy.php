@@ -29,7 +29,7 @@ require_once('./copy_img/simple_html_dom.php');
 require_once('./copy_img/url_to_absolute.php');
 
 //$url = 'http://localhost:8888/copie.html';
-$url = 'http://localhost/copie.html';
+$url = 'http://localhost:8888/copie.html';
 
 $html = file_get_html($url);
 $absolu = 0;

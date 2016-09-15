@@ -79,6 +79,7 @@
                         </div>
                         <form>
                             <input type="submit" id="downloadButton" name="ok" value="Générer le projet" />
+                            <a href=""></a>
                         </form>
                     </div>
                 </div>
@@ -139,13 +140,15 @@
 //            while (!UrlExists('http://localhost/Zip.zip')) {
 //
 //            }
-
+            $('form a').remove();
             var link = document.createElement('a');
             link.setAttribute('download', 'test.zip');
             link.setAttribute('href', 'Zip.zip');
+            link.innerHTML = ("Veuillez utiliser ce lien si le telechargement ne se lance pas automatiquement...");
             link.click();
+            $('form').append(link);
 
-            $.appendTo('')
+
         }
 
         function UrlExists(url) {
@@ -171,7 +174,9 @@
             )
                     .done(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
-                        console.info("Data: " + data + "\nStatus: " + status);
+                        alert("de la balle");
+                        //console.info("Data: " + data + "\nStatus: " + status);
+                        downloadZip();
                     })
                     .fail(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
