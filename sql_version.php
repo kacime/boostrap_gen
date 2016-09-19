@@ -25,60 +25,18 @@
                 <div class="col-md-4">
                     <div class="container">
 
+                    <select name="carlist" form="carform">
+                      <option value="titre">titre</option>
+                      <option value="vignette">vignette</option>
+                    </select>
 
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bootstrap_gen";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+                    <div id="selection"></div>
 
 
-
-$sql = "SELECT * FROM bloc";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo $row["code"];
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
-
-?>
-
-
-                <div class="row">
-
-                        <div class="btn-group"> 
-  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Action</button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Dompteurs</a></li>
-    <li><a href="#">Zoos</a></li>
-    <li><a href="#">Chasseurs</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Autres témoignages</a></li>
-  </ul>
-</div>
-
-                             
-
-                            
-                        </div>
                     </div>
                 </div>
+
                 <div id="final" class="col-md-8">
                     <div class="container">
                         <p>Drop here</p>
@@ -194,6 +152,41 @@ $conn->close();
                     })
                     ;
         });
+
+
+
+
+
+        $(document).ready(function() {
+        $('select').change(function() {
+        //On récupère le nom
+        alert('changement');
+        var value = $(this).val();
+
+        //On prépare l'Ajax
+        $.post("traitement.php",
+                    {
+                        nom: value,
+                    }
+            )
+                    .done(function (data, status) {
+                        // Retour dans le code Javascript apres requete asynchrone
+                         $("#selection").html(data);
+                       
+                    })
+                    .fail(function (data, status) {
+                        // Retour dans le code Javascript apres requete asynchrone
+                        console.error("FAILED Data: " + data + "\nStatus: " + status);
+                    })
+                    ;
+    });
+});
+
+
+
+
+
+
 
 
     </script>
