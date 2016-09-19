@@ -29,8 +29,6 @@
                       <option value="titre">titre</option>
                       <option value="vignette">vignette</option>
                     </select>
-
-
                     <div id="selection"></div>
 
 
@@ -160,7 +158,6 @@
         $(document).ready(function() {
         $('select').change(function() {
         //On récupère le nom
-        alert('changement');
         var value = $(this).val();
 
         //On prépare l'Ajax
@@ -172,6 +169,12 @@
                     .done(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
                          $("#selection").html(data);
+                         $('.draggable').draggable({
+                            revert: true,
+                            drag: function (event, ui) {
+                            }
+                        });
+
                        
                     })
                     .fail(function (data, status) {

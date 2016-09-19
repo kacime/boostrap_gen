@@ -2,8 +2,6 @@
 
 $nom = $_POST['nom'];
 
-echo $nom;
-
 $servername = "localhost";
 $username = "root";
 $password = "root";
