@@ -11,7 +11,7 @@
         <style>
             .draggable {  z-index: 1; }
             #droppable { height: auto; min-height: 500px; z-index: 0;}
-            #final .container {border: 1px solid black;}
+            #final .container{border: 1px solid black;}
             .miniature p {font-size: 0.8em;}
             .miniature h1 {font-size: 2em;}
             .container { width: 95%; }
@@ -26,11 +26,16 @@
                     <div class="container">
                         <div class="row">
 
-
-                             <div class=" draggable miniature">
-                                
-                            </div>
-
+                        <div class="btn-group"> 
+  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Action</button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Dompteurs</a></li>
+    <li><a href="#">Zoos</a></li>
+    <li><a href="#">Chasseurs</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Autres témoignages</a></li>
+  </ul>
+</div>
 
                              <div class=" draggable miniature">
                                 <div class="row">
@@ -190,6 +195,7 @@
 
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
 
 
