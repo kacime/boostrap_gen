@@ -19,6 +19,11 @@
             .miniature .btn {transform: scale(0.5);}
             .miniature .fa-4x {transform: scale(0.6);}
             .container { width: 95%; }
+            .miniature section {padding: 50px 0;}
+
+            #droppable section {padding: 100px 0;}
+
+            select { margin: 10px 0;}
         </style>
     </head>
 

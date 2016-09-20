@@ -26,9 +26,11 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo $row["code"];
     }
-} else {
-    echo "0 results";
-}
+} 
+
+// else {
+//   echo "0 results";
+// }
 $conn->close();
 
 ?>
