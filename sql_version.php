@@ -29,11 +29,10 @@
                 <div class="col-md-4">
                     <div class="container">
 
-                    <select name="carlist" form="carform">
-                      <option value="titre">titre</option>
-                      <option value="vignette">vignette</option>
-                      <option value="description">description</option>
-                    </select>
+                    <!-- On inclut la page select.php qui gère le menu des catégories à choix multiple-->
+                    <?php  include("select.php") ?>
+
+
                     <div id="selection"></div>
 
 
@@ -74,8 +73,8 @@
 
 
 
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-    <script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
 
@@ -130,7 +129,7 @@
             return http.status != 404;
         }
 
-
+        // Fonction qui permet de lancer tout le traitement de la page crée pour la générer, et qui lance le téléchargement une fois le bouton appuyé
         $('#downloadButton').click(function (e) {
             // Empeche l'action par default du bouton de s'executer
             // (envoyer le submit et donc recharger la page)
@@ -146,9 +145,8 @@
             )
                     .done(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
-                        alert("de la balle");
-                        //console.info("Data: " + data + "\nStatus: " + status);
                         downloadZip();
+                        //console.info("Data: " + data + "\nStatus: " + status);
                     })
                     .fail(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
@@ -160,18 +158,14 @@
 
 
 
-
+        // Fonction qui appelle toute les blocs de la bdd qui ont été selectionnés lors du changement de catégorie
         $(document).ready(function() {
-        $('select').change(function() {
-        //On récupère le nom
-        var value = $(this).val();
+            $('select').change(function() {
+                //On récupère le nom
+                var value = $(this).val();
 
-        //On prépare l'Ajax
-        $.post("traitement.php",
-                    {
-                        nom: value,
-                    }
-            )
+                //On prépare l'Ajax
+                $.post("traitement.php", { nom: value } )
                     .done(function (data, status) {
                         // Retour dans le code Javascript apres requete asynchrone
                          $("#selection").html(data);
@@ -187,9 +181,9 @@
                         // Retour dans le code Javascript apres requete asynchrone
                         console.error("FAILED Data: " + data + "\nStatus: " + status);
                     })
-                    ;
-    });
-});
+                ;
+            });
+        });
 
 
 
