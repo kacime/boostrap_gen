@@ -11,9 +11,13 @@
         <style>
             .draggable {  z-index: 1; }
             #droppable { height: auto; min-height: 500px; z-index: 0;}
-            #final .container{border: 1px solid black;}
-            .miniature p {font-size: 0.8em;}
-            .miniature h1 {font-size: 2em;}
+            #final > :first-child {border: 1px solid black; width: 100%;}
+            .miniature p {font-size: 0.4em;}
+            .miniature h3 {font-size: 0.7em;}
+            .miniature h2 {font-size: 1.2em;}
+            .miniature h1 {font-size: 1.2em;}
+            .miniature .btn {transform: scale(0.5);}
+            .miniature .fa-4x {transform: scale(0.6);}
             .container { width: 95%; }
         </style>
     </head>
@@ -28,6 +32,7 @@
                     <select name="carlist" form="carform">
                       <option value="titre">titre</option>
                       <option value="vignette">vignette</option>
+                      <option value="description">description</option>
                     </select>
                     <div id="selection"></div>
 
@@ -42,11 +47,12 @@
 
 
                         </div>
-                        <form>
-                            <input type="submit" id="downloadButton" name="ok" value="Générer le projet" />
-                            <a href=""></a>
-                        </form>
+                        
                     </div>
+                    <form>
+                        <input type="submit" id="downloadButton" name="ok" value="Générer le projet" />
+                        <a href=""></a>
+                    </form>
                 </div>
 
             </div>
